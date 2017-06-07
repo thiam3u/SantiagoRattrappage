@@ -12,8 +12,13 @@ public class Joueur {
 	private int score;
 	private Parcelle parcelleMain;
 	private boolean canalComplementaire = true;
-	private Color Couleur;
+	private Color couleur;
 	
-	
+	public Joueur(String pseudo, int argent, int score, Color couleur){
+		this.pseudo = pseudo;
+		this.argent = argent;
+		this.score = 0;
+		this.couleur = couleur;
+	}
 
 }
