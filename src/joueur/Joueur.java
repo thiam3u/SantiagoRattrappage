@@ -61,6 +61,14 @@ public class Joueur {
         this.canalComplementaire = canalComplementaire;
     }
     
-    
+    @Override
+    public String toString() {
+        return "Joueur{" +
+                "pseudo='" + pseudo + '\'' +
+                ", argent=" + argent +
+                ", score=" + score +
+                ", parcelleMain=" + parcelleMain +
+                '}';
+    }
 
 }
