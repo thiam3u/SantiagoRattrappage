@@ -28,5 +28,39 @@ public class Joueur {
 		this.parcelleMain = j_actif.parcelleMain;
 		this.couleur = j_actif.couleur;
 	}
+	
+    public String getPseudo() {
+        return pseudo;
+    }
+    
+    public int getArgent() {
+        return argent;
+    }
+    
+    public void setArgent(int argent) {
+        this.argent = argent;
+    }
+    
+    public Color getCouleur() {
+        return couleur;
+    }
+    
+    public Parcelle getParcelleMain() {
+        return parcelleMain;
+    }
+    
+    public void setParcelleMain(Parcelle parcelleMain) {
+        this.parcelleMain = parcelleMain;
+    }
+    
+    public boolean isCanalComplementaire() {
+        return canalComplementaire;
+    }
+    
+    public void setCanalComplementaire(boolean canalComplementaire) {
+        this.canalComplementaire = canalComplementaire;
+    }
+    
+    
 
 }
