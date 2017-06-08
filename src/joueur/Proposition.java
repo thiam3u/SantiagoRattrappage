@@ -8,5 +8,11 @@ public class Proposition {
     ArrayList<Joueur> listJoueur = new ArrayList<Joueur>();
     ArrayList<Integer> listMontant = new ArrayList<Integer>();
     Canal canal;
+    
+	public Proposition(Canal canal) {
+		this.canal = canal;
+	}
+    
+    
 
 }
