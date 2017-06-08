@@ -12,6 +12,14 @@ public class Proposition {
 	public Proposition(Canal canal) {
 		this.canal = canal;
 	}
+	
+    public int total() {
+        int total = 0;      
+        for (Integer elem : listMontant) {
+            total += elem;
+        }
+        return total;
+    }
     
     
 
