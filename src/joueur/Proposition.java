@@ -21,6 +21,11 @@ public class Proposition {
         return total;
     }
     
+    public void soutenirProposition(Joueur joueur, int montant) {
+        listJoueur.add(joueur);
+        listMontant.add(montant);
+    }
+    
     
 
 }
