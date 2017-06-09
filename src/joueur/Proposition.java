@@ -26,6 +26,14 @@ public class Proposition {
         listMontant.add(montant);
     }
     
+    public void paiementProposition() {
+        int nbj = 0;
+        for (Joueur joueur : listJoueur) {
+        	joueur.setArgent(joueur.getArgent() - listMontant.get(nbj));
+        	nbj++;
+        }
+    }
+    
     
 
 }
