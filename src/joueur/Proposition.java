@@ -13,6 +13,14 @@ public class Proposition {
 		this.canal = canal;
 	}
 	
+    public Canal getCanal() {
+        return canal;
+    }
+    
+    public void setCanal(Canal canal) {
+        this.canal = canal;
+    }
+    
     public int total() {
         int total = 0;      
         for (Integer elem : listMontant) {
@@ -33,7 +41,4 @@ public class Proposition {
         	nbj++;
         }
     }
-    
-    
-
 }
