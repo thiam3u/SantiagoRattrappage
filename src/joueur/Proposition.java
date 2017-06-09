@@ -41,4 +41,14 @@ public class Proposition {
         	nbj++;
         }
     }
+    
+    @Override
+    public String toString() {
+        return "Proposition{" +
+                "listJoueur=" + listJoueur.toString() +
+                ", listmontant=" + listMontant +
+                ", total=" + total() +
+                '}';
+    }
+    
 }
