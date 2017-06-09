@@ -172,4 +172,38 @@ public class Clients {
 	                }
 	            }
 	        };
-}
+	        Thread serverThreadSend = new Thread(clientSend);
+	        serverThreadSend.start();
+	        
+	        
+	        public void sendPseudo(String pseudo){
+	            this.pseudo = pseudo;
+	        }
+	        
+	        public ArrayList<Joueur> getJoueurs() {
+	            att = new Thread();
+	            att.start();
+	            synchronized (att) {
+	                while (listeJoueur == null) {
+	                    System.out.println("att");
+	                    try {
+	                        att.wait();
+	                    } catch (InterruptedException e) {
+	                        e.printStackTrace();
+	                    }
+	                }
+	                ArrayList<Joueur> ret = new ArrayList<Joueur>(listeJoueur);
+	                listeJoueur =null;
+	                return ret;
+	            }
+	        }
+	        
+	        
+	        	
+
+	    }
+        
+	        
+	        
+
+
