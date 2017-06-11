@@ -50,5 +50,14 @@ public class Proposition {
                 ", total=" + total() +
                 '}';
     }
+
+    public String affichageProposition() {
+        String mess = "";
+        for (Joueur joueur : listJoueur) {
+            int montant = listMontant.get(listJoueur.indexOf(joueur));
+            mess = mess + joueur.getPseudo() + " donne " + montant + " escudos " + '\n';
+        }
+        return mess;
+    }
     
 }
