@@ -21,6 +21,7 @@ public class Proposition {
         this.canal = canal;
     }
     
+    // Calcul du montant total des propositions
     public int total() {
         int total = 0;      
         for (Integer elem : listMontant) {
@@ -29,6 +30,7 @@ public class Proposition {
         return total;
     }
     
+    // On ajoute le montant de l'enchère du joueur qui soutient la nouvelle proposition ou non
     public void soutenirProposition(Joueur joueur, int montant) {
         listJoueur.add(joueur);
         listMontant.add(montant);
@@ -36,6 +38,7 @@ public class Proposition {
     
     public void paiementProposition() {
         int nbj = 0;
+        // Pour chaque joueur, on lui débite le montant qu'il s'est engagé à payer
         for (Joueur joueur : listJoueur) {
         	joueur.setArgent(joueur.getArgent() - listMontant.get(nbj));
         	nbj++;
@@ -51,6 +54,7 @@ public class Proposition {
                 '}';
     }
 
+    // Pour chaque joueur, on affiche le montant de sa proposition
     public String affichageProposition() {
         String mess = "";
         for (Joueur joueur : listJoueur) {
