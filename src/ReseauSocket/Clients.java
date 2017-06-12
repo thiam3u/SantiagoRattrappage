@@ -198,6 +198,25 @@ public class Clients {
 	            }
 	        }
 	        
+	        public ArrayList<PileParcelle> getPileParcelles () {
+	            att = new Thread();
+	            att.start();
+	            synchronized (att) {
+	                while (pileParcelles == null) {
+	                    System.out.println("att");
+	                    try {
+	                        att.wait();
+	                    } catch (InterruptedException e) {
+	                        e.printStackTrace();
+	                    }
+	                }
+	                return pileParcelles;
+	            }
+
+	        }
+	        
+	        
+	        
 	        
 	        	
 
