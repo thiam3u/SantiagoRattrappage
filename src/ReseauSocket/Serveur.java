@@ -10,6 +10,8 @@ import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
 
+import plateau.PileParcelle;
+
 
 
 //import reseau.Server;
@@ -91,8 +93,23 @@ public class Serveur {
 	        }
 	    }
 	    
-	    
-	    
+	    public void sendPileParcelle(ArrayList<PileParcelle> pileParcelles, int i){
+	        System.out.println("sendPile");
+	        try {
+	            clientCo.get(i).oos.writeInt(3);
+	            clientCo.get(i).oos.flush();
+	            System.out.println("sendJoueur to " + i);
+	            for(int j =0; j<pileParcelles.size(); j++){
+	                System.out.println("Send " + j + " Part of the pile");
+	                clientCo.get(i).oos.writeObject(pileParcelles.get(j));
+	                clientCo.get(i).oos.flush();
+	            }
+	        } catch (IOException e) {
+	            System.out.println("fail envoie");
+	            e.printStackTrace();
+	        }
+	    }
+	  
 	    class Server2Connection implements Runnable {
 	        ObjectInputStream is;
 	        //PrintStream os;
@@ -127,6 +144,9 @@ public class Serveur {
 	                e.printStackTrace();
 	            }
 	        }
+	        
+	        
+	        
 
 	        public void run() {
 	            int n;
@@ -182,11 +202,8 @@ public class Serveur {
 	                if ( serverStop ) server.stopServer();
 	            } catch (IOException e) {
 	                System.out.println(e);
-	            }
-	        }  
+	            }  }  
 
 }
-	    
-	    
-	    
+	      
 }
