@@ -27,10 +27,62 @@ public class Main {
 	    private String pseudoJoueur;
 	    
 	    
-	    
-	    
-	    
+	    public Boolean getLocal() {
 
+	        return local;
+	    }
+	    public void setLocal(Boolean local) {
+	        this.local = local;
+	    }
+
+	    public Server getServ() {
+	        return serv;
+	    }
+
+	    public void setServ(Server serv) {
+	        this.serv = serv;
+	    }
+
+	    public Client getCli() {
+	        return cli;
+	    }
+
+	    public void setCli(Client cli) {
+	        this.cli = cli;
+	    }
+
+	    public Plateau getPlateau() {
+	        return plateau;
+	    }
+
+	    public FenetreGUI getFenetre() {
+	        return fenetre;
+	    }
+
+	    public ArrayList<PileParcelle> getPileParcelles() {
+	        return pileParcelles;
+	    }
+
+	    public void setJ_actif(Joueur joueur) {
+	        this.j_actif = joueur;
+	    }
+
+	    private void setJoueur(ArrayList<Joueur> listeJoueurs) {
+	        joueurs = listeJoueurs;
+	        this.pileParcelles = new ArrayList<PileParcelle>(joueurs.size());
+	        initialisationPileParcelles();
+	    }
+
+	    public void setConstructeurCanal(Joueur j) {
+	        constructeurCanal = j;
+	    }
+	    
+	    
+	    private void setJoueur(ArrayList<Joueur> listeJoueurs) {
+	        joueurs = listeJoueurs;
+	        this.pileParcelles = new ArrayList<PileParcelle>(joueurs.size());
+	        initialisationPileParcelles();
+	    }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
