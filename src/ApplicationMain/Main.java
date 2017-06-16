@@ -26,7 +26,6 @@ public class Main {
 	    private Boolean local = false;
 	    private String pseudoJoueur;
 	    
-	    
 	    public Boolean getLocal() {
 
 	        return local;
@@ -77,12 +76,28 @@ public class Main {
 	        constructeurCanal = j;
 	    }
 	    
-	    
-	    private void setJoueur(ArrayList<Joueur> listeJoueurs) {
-	        joueurs = listeJoueurs;
+	    public MaitreDuJeu(ArrayList<Joueur> joueurs) {
+	        this.nbTours = 0;
+	        this.plateau = new Plateau();
+	        this.plateau.initialisation();
+	        this.joueurs = joueurs;
+	        //créer autant de pile de parcelle qu'il y a de joueurs
 	        this.pileParcelles = new ArrayList<PileParcelle>(joueurs.size());
 	        initialisationPileParcelles();
+	        this.fenetre = new FenetreGUI();
 	    }
+
+	    public MaitreDuJeu() {
+	        this.nbTours = 0;
+	        this.plateau = new Plateau();
+	        this.plateau.initialisation();
+	        //créer autant de pile de parcelle qu'il y a de joueurs
+	        this.fenetre = new FenetreGUI();
+	    }
+	    
+	    
+	   
+	    
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
