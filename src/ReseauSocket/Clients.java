@@ -214,6 +214,23 @@ public class Clients {
 	            }
 
 	        }
+	        public int[] getMontantEnchere() {
+	            att = new Thread();
+	            att.start();
+	            synchronized (att) {
+	                while (montantEnchere == null) {
+	                    System.out.println("att");
+	                    try {
+	                        att.wait();
+	                    } catch (InterruptedException e) {
+	                        e.printStackTrace();
+	                    }
+	                }
+	                int [] res = (int[]) montantEnchere.clone();
+	                montantEnchere = null;
+	                return res;
+	            }
+	        }
 	        
 	        
 	        
