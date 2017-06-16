@@ -10,7 +10,10 @@ import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
 
+import joueur.Joueur;
+import plateau.Parcelle;
 import plateau.PileParcelle;
+import reseau.Server2Connection;
 
 
 
@@ -92,6 +95,36 @@ public class Serveur {
 	            e.printStackTrace();
 	        }
 	    }
+	    public Parcelle parcelleChoisi(Joueur j_actif) {
+	        Server2Connection j = getJoueur(j_actif.getPseudo());
+	        j.att = new Thread();
+	        j.att.start();
+	        j.parcelleMain =null;
+	        synchronized (j.att) {
+	            try {
+	                j.oos.writeInt(5);
+	                j.oos.flush();
+	                while (j.parcelleMain == null) {
+	                    System.out.println("att parcelle du client");
+	                    j.att.wait();
+	                }
+	            } catch (IOException e) {
+	                e.printStackTrace();
+	            }catch (InterruptedException e) {
+	                e.printStackTrace();
+	            }
+	            return j.parcelleMain;
+	        }
+	    }
+
+	    private Server2Connection getJoueur(String pseudo) {
+	        for(int i = 0; i<3; i++){
+	            if(clientCo.get(i).pseudoJoueur == pseudo){
+	                return clientCo.get(i);
+	            }
+	        }
+	        return null;
+	    }
 	    
 	    public void sendPileParcelle(ArrayList<PileParcelle> pileParcelles, int i){
 	        System.out.println("sendPile");
@@ -109,7 +142,7 @@ public class Serveur {
 	            e.printStackTrace();
 	        }
 	    }
-	  
+	    
 	    class Server2Connection implements Runnable {
 	        ObjectInputStream is;
 	        //PrintStream os;
@@ -144,6 +177,7 @@ public class Serveur {
 	                e.printStackTrace();
 	            }
 	        }
+	        
 	        
 	        
 	        
