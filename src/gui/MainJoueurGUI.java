@@ -3,8 +3,10 @@ package gui;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.net.URL;
 
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import gameMaster.MaitreDuJeu;
@@ -33,6 +35,11 @@ public class MainJoueurGUI {
         panel.add(new JLabel(Integer.toString(joueur.getArgent())), gbc);
         
         panel.setBorder(BorderFactory.createLineBorder(Color.darkGray));
+        
+        String cheminparcelle = "/ressource/images/canalhorirrigue.png";
+        URL url_parcelle = this.getClass().getResource(cheminparcelle);
+        final ImageIcon canal = new ImageIcon(url_parcelle);
+        canalLabel = new JLabel(canal);
         
     }
 
