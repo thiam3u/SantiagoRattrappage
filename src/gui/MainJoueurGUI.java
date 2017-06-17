@@ -59,6 +59,10 @@ public class MainJoueurGUI {
             panel.add(new JLabel(icon), gbc);
         }
         
+        public JPanel getPanel() {
+            return panel;
+        }
+        
     }
 
 }
