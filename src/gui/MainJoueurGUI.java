@@ -19,6 +19,12 @@ public class MainJoueurGUI {
         panel.setBackground(j.getCouleur());
         GridBagConstraints gbc = new GridBagConstraints();
         
+        // On positionne la case de départ du composant
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.gridheight = 1;
+        gbc.gridwidth = 1;
+        
     }
 
 }
