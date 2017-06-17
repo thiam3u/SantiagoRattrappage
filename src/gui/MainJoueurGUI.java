@@ -24,6 +24,10 @@ public class MainJoueurGUI {
         gbc.gridy = 0;
         gbc.gridheight = 1;
         gbc.gridwidth = 1;
+        panel.add(new JLabel(joueur.getPseudo()), gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        panel.add(new JLabel(Integer.toString(joueur.getArgent())), gbc);
         
     }
 
