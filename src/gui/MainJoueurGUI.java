@@ -45,6 +45,20 @@ public class MainJoueurGUI {
             panel.add(canalLabel, gbc);
         }
         
+        String chemin = "/ressource/images/";
+        URL url = null;
+        ImageIcon icon;
+        if(joueur.getParcelleMain() != null){
+            chemin += joueur.getParcelleMain().getChamps();
+            chemin += joueur.getParcelleMain().getNbouvrier();
+            chemin += ".png";
+            url = this.getClass().getResource(chemin);
+            icon = new ImageIcon(url);
+            gbc.gridx = 0;
+            gbc.gridy = 3;
+            panel.add(new JLabel(icon), gbc);
+        }
+        
     }
 
 }
