@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.net.URL;
-
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -39,7 +38,12 @@ public class MainJoueurGUI {
         String cheminparcelle = "/ressource/images/canalhorirrigue.png";
         URL url_parcelle = this.getClass().getResource(cheminparcelle);
         final ImageIcon canal = new ImageIcon(url_parcelle);
-        canalLabel = new JLabel(canal);
+        canalLabel = new JLabel(canal);  
+        if(joueur.isCanalComplementaire()){
+            gbc.gridx = 0;
+            gbc.gridy = 2;
+            panel.add(canalLabel, gbc);
+        }
         
     }
 
