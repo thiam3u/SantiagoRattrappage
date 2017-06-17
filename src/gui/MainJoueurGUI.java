@@ -1,7 +1,10 @@
 package gui;
 
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+
+import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import gameMaster.MaitreDuJeu;
@@ -28,6 +31,8 @@ public class MainJoueurGUI {
         gbc.gridx = 0;
         gbc.gridy = 1;
         panel.add(new JLabel(Integer.toString(joueur.getArgent())), gbc);
+        
+        panel.setBorder(BorderFactory.createLineBorder(Color.darkGray));
         
     }
 
