@@ -1,7 +1,9 @@
 package ApplicationMain;
 
+import java.awt.Color;
 import java.util.ArrayList;
 
+import gameMaster.MaitreDuJeu;
 import gui.FenetreGUI;
 import gui.PileParcelleGUI;
 import joueur.Joueur;
@@ -99,7 +101,17 @@ public class Main {
 	   
 	    
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		  //preparaton d<une liste de couleur pour eviter les doublons
+        Color[] tabCouleur = new Color[4];
+        tabCouleur[0] = Color.red;
+        tabCouleur[1] = Color.cyan;
+        tabCouleur[2] = Color.green;
+        tabCouleur[3] = Color.pink;
+        //A la place une interface graphique devras permettre de choisir les joueurs
+        ArrayList<Joueur> listeJoueurs = new ArrayList<Joueur>(4);
+
+        MaitreDuJeu mj = new MaitreDuJeu();
+        mj.afficherLauncher();
 
 	}
 	
