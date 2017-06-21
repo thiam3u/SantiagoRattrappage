@@ -112,6 +112,63 @@ public class Main {
 
         MaitreDuJeu mj = new MaitreDuJeu();
         mj.afficherLauncher();
+        while (mj.getCli() == null && mj.getServ() == null && !mj.getLocal()) {
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            if (mj.fenetre.getLauncher().getServer()) {
+                mj.setServ(new Server(6789));
+                mj.getServ().startServer();
+            }
+            if (mj.fenetre.getLauncher().getClient()) {
+                mj.setCli(new Client());
+                mj.getCli().lancer();
+                mj.getCli().sendPseudo(mj.fenetre.getLauncher().jtf.getText());
+            }
+            if (mj.fenetre.getLauncher().pseudo4String != null) {
+                listeJoueurs.add(new Joueur(mj.fenetre.getLauncher().jtf.getText(), 10, tabCouleur[0]));
+                listeJoueurs.add(new Joueur(mj.fenetre.getLauncher().pseudo2String, 10, tabCouleur[1]));
+                listeJoueurs.add(new Joueur(mj.fenetre.getLauncher().pseudo3String, 10, tabCouleur[2]));
+                listeJoueurs.add(new Joueur(mj.fenetre.getLauncher().pseudo4String, 10, tabCouleur[3]));
+                mj.setLocal(true);
+            }
+            if (mj.getLocal()) {
+                mj.jouerPartieLocal(listeJoueurs);
+            }
+            if (mj.getServ() != null) {
+                mj.pseudoJoueur = mj.fenetre.getLauncher().jtf.getText();
+                listeJoueurs.add(new Joueur(mj.fenetre.getLauncher().jtf.getText(), 10, Color.red));
+                while (mj.getServ().getNbCo() != 3) {
+                    int jrestant = 3 - mj.getServ().getNbCo();
+                    mj.fenetre.getLauncher().setInfo("Attente de " + jrestant + "joueur");
+                }
+                mj.fenetre.getLauncher().setInfo("Tout les joueurs sont connecté début de la partie");
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                for (int i = 0; i < 3; i++) {
+                    while (mj.getServ().getPseudo(i) == "unknow") {
+                        mj.fenetre.getLauncher().setInfo("Tout les joueurs sont connecté début de la partie");
+                    }
+                    listeJoueurs.add(new Joueur(mj.getServ().getPseudo(i), 10, tabCouleur[i]));
+
+                }
+
+                mj.jouerPartieServeur(listeJoueurs);
+            }
+            if (mj.getCli() != null) {
+                mj.joueursCli = new Joueur(mj.fenetre.getLauncher().jtf.getText(), 10, tabCouleur[0]);
+                listeJoueurs = mj.getCli().getJoueurs();
+                mj.jouerPartieClient(listeJoueurs);
+            }
+        }
+        
+        
+        
 
 	}
 	
