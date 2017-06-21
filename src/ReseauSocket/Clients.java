@@ -231,12 +231,36 @@ public class Clients {
 	                return res;
 	            }
 	        }
-	        
-	        
-	        
-	        
-	        	
+	        public void sendEnchere(int i) {
+	            try {
+	                //code message
+	                os.writeInt(3);
+	                os.flush();
+	                //montantEnchere
+	                os.writeInt(i);
+	                os.flush();
+	            } catch (IOException e) {
+	                e.printStackTrace();
+	            }
+	        }
 
+	        public Boolean getParcelleMain(){
+	            att = new Thread();
+	            att.start();
+	            synchronized (att) {
+	                while (!prendParcelle) {
+	                    System.out.println("att Parcelle Main");
+	                    try {
+	                        att.wait();
+	                    } catch (InterruptedException e) {
+	                        e.printStackTrace();
+	                    }
+	                }
+	                prendParcelle =false;
+	                return true;
+	            }
+	        }
+ 	
 	    }
         
 	        
