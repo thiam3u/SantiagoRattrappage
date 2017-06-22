@@ -11,7 +11,7 @@ import reseau.Client;
 import reseau.Server;
 
 public class Main {
-	  private static int montantRevenu = 5; //non imposable
+	  private static int montantRevenu = 3; //non imposable
 	    private Joueur joueursCli;
 	    private int nbTours = 0; //nombre de tours écoulé dans la partie
 	    private Plateau plateau; //le plateau de jeu
