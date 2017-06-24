@@ -166,11 +166,18 @@ public class Main {
                 mj.jouerPartieClient(listeJoueurs);
             }
         }
-        
-        
-        
-
 	}
+          // les fonctionnalité du jeu 
 	
+        public void refreshInfo(String mess) {
+            fenetre.refreshInfo("Tours : " + Integer.toString(nbTours) + "Phase : " + mess + " Joueur : " + j_actif.getPseudo());
+        }
+        //cette methode gere la premiére partie du Enchére pour les plantes
+        public void enchereParcelle() {
+            int[] montantEnchere = new int[joueurs.size()];
+            for (int i = 0; i < joueurs.size(); i++) {
+                montantEnchere[i] = -1;
+            }
+	}
 
 }
