@@ -166,7 +166,7 @@ public class Main {
                 mj.jouerPartieClient(listeJoueurs);
             }
         }
-	}
+	
           // les fonctionnalité du jeu 
 	
         public void refreshInfo(String mess) {
@@ -178,6 +178,18 @@ public class Main {
             for (int i = 0; i < joueurs.size(); i++) {
                 montantEnchere[i] = -1;
             }
+            this.retournerPlantation();
+            for (int i = 0; i < joueurs.size(); i++) {
+                j_actif = joueurs.get(i);
+                montantEnchere[i] = fenetre.offreJoueur(j_actif, montantEnchere);
+
+            }
+                      
 	}
+        
+	}
+        
+        
+        
 
 }
