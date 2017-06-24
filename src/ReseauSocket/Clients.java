@@ -260,6 +260,23 @@ public class Clients {
 	                return true;
 	            }
 	        }
+	        public Parcelle getParcellePrise(){
+	            att = new Thread();
+	            att.start();
+	            synchronized (att) {
+	                while (pChoisie == null) {
+	                    System.out.println("att ParcellePrise");
+	                    try {
+	                        att.wait();
+	                    } catch (InterruptedException e) {
+	                        e.printStackTrace();
+	                    }
+	                }
+	                Parcelle res = new Parcelle(pChoisie);
+	                pChoisie = null;
+	                return res;
+	            }
+	        }
  	
 	    }
         
