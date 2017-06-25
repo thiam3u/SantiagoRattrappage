@@ -25,4 +25,10 @@ public class PileParcelleGUI {
         this.pileParcelles = pileParcelles;
     }
 
+    public void initialisation() {
+        String cheminparcelle = "/ressource/images/parcelle.png";
+        URL url_parcelle = this.getClass().getResource(cheminparcelle);
+        final ImageIcon iconparcelle = new ImageIcon(url_parcelle);
+        
+        
 }
