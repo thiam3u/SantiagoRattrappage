@@ -54,6 +54,9 @@ public class PileParcelleGUI {
                             //Recuperer la parcelle
                             parcelleChoisie = pileParcelles.get(indice).getParcelle();
                             if (pileParcelles.get(indice).getPileParcelle().size() > 1) {
+                                //Retirer l'image
+                                pileParcelles.get(indice).popParcelle();
+                            }
                             	
                             }
                         }
