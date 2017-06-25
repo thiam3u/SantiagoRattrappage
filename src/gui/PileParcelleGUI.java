@@ -20,5 +20,9 @@ public class PileParcelleGUI {
     String cheminvide = "/ressource/images/vide.png";
     URL url_vide = this.getClass().getResource(cheminvide);
     final ImageIcon iconvide = new ImageIcon(url_vide);
+    
+    public PileParcelleGUI(ArrayList<PileParcelle> pileParcelles) {
+        this.pileParcelles = pileParcelles;
+    }
 
 }
