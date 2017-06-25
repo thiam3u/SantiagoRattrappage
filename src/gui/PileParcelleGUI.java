@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -45,6 +46,12 @@ public class PileParcelleGUI {
             thumb.setIcon(iconparcelle);
             pileParcellesGUI.add(thumb);
             thumb.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    //on remplit la liste des Jlabel des 4 piles pour travailler dessus plus tard
+                    if (encherencours) {
+                        if (thumb.getIcon() != iconvide) {
+            }
         
         
        
