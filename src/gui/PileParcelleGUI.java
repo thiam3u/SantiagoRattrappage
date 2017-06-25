@@ -1,7 +1,9 @@
 package gui;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.MouseAdapter;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -34,6 +36,15 @@ public class PileParcelleGUI {
         final ImageIcon iconparcelle = new ImageIcon(url_parcelle);
         
         panel.setBorder(BorderFactory.createLineBorder(Color.black));
+        
+        // Instanciation puis définition du libellé
+        for (int i = 0; i < 4; i++) {
+            final int indice = i;
+            final JLabel thumb = new JLabel();
+            thumb.setPreferredSize(new Dimension(100, 100));
+            thumb.setIcon(iconparcelle);
+            pileParcellesGUI.add(thumb);
+            thumb.addMouseListener(new MouseAdapter() {
         
         
        
