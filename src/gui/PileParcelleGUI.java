@@ -48,9 +48,15 @@ public class PileParcelleGUI {
             thumb.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mouseClicked(MouseEvent e) {
-                    //on remplit la liste des Jlabel des 4 piles pour travailler dessus plus tard
+                    //On remplit la liste des Jlabel des 4 piles pour travailler dessus plus tard
                     if (encherencours) {
                         if (thumb.getIcon() != iconvide) {
+                            //Recuperer la parcelle
+                            parcelleChoisie = pileParcelles.get(indice).getParcelle();
+                            if (pileParcelles.get(indice).getPileParcelle().size() > 1) {
+                            	
+                            }
+                        }
             }
         
         
