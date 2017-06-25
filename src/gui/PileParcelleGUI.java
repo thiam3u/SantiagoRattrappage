@@ -1,8 +1,11 @@
 package gui;
 
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.net.URL;
 import java.util.ArrayList;
+
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -29,6 +32,13 @@ public class PileParcelleGUI {
         String cheminparcelle = "/ressource/images/parcelle.png";
         URL url_parcelle = this.getClass().getResource(cheminparcelle);
         final ImageIcon iconparcelle = new ImageIcon(url_parcelle);
+        
+        panel.setBorder(BorderFactory.createLineBorder(Color.black));
+        
+        
+       
+        
+        
         
         
 }
