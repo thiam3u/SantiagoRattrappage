@@ -56,6 +56,15 @@ public class PileParcelleGUI {
                             if (pileParcelles.get(indice).getPileParcelle().size() > 1) {
                                 //Retirer l'image
                                 pileParcelles.get(indice).popParcelle();
+                                //afficher  la parcelle suivante
+                                // retournerParcelles(thumb, indice);
+                                thumb.setIcon(iconvide);
+                            } else {
+                                //retirer limage
+                                pileParcelles.get(indice).popParcelle();
+                                thumb.setIcon(iconvide);
+                            }
+                        }
                             }
                             	
                             }
