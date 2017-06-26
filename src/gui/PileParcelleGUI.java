@@ -64,16 +64,20 @@ public class PileParcelleGUI {
                                 pileParcelles.get(indice).popParcelle();
                                 thumb.setIcon(iconvide);
                             }
+                        }
                             synchronized (threadAttenteChoixPile) {
                                 threadAttenteChoixPile.notify();
                                 //stocker la parcelle dans la main du joueur
                             }
                         }
-                            }
-                            	
-                            }
-                        }
+
+                    }
+
+                });
+
+                panel.add(thumb);
             }
+        }
         
         
        
