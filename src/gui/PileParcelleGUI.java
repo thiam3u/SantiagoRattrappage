@@ -78,6 +78,10 @@ public class PileParcelleGUI {
                 panel.add(thumb);
             }
         }
+
+    	public void retournerParcelles(JLabel thumb, int compt) {
+    		String chemin = null;
+    		URL url = null;
         
         
        
