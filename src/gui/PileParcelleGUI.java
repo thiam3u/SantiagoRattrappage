@@ -83,6 +83,15 @@ public class PileParcelleGUI {
     		String chemin = null;
     		URL url = null;
     		switch (pileParcelles.get(compt).recupTypeDessus()) {
+    			case patate:
+    				if (pileParcelles.get(compt).recupNbouvrierDessus() == 1) {
+    					chemin = "/ressource/images/patate1.png";
+    				} else {
+    					chemin = "/ressource/images/patate2.png";
+    				}
+    				break;
+    				
+    		}
         
         
        
