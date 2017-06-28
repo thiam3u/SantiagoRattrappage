@@ -82,6 +82,7 @@ public class PileParcelleGUI {
     	public void retournerParcelles(JLabel thumb, int compt) {
     		String chemin = null;
     		URL url = null;
+    		switch (pileParcelles.get(compt).recupTypeDessus()) {
         
         
        
