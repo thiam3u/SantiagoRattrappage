@@ -7,6 +7,7 @@ import gameMaster.MaitreDuJeu;
 import gui.FenetreGUI;
 import gui.PileParcelleGUI;
 import joueur.Joueur;
+import plateau.Parcelle;
 import plateau.PileParcelle;
 import plateau.Plateau;
 import reseau.Client;
@@ -172,7 +173,7 @@ public class Main {
         public void refreshInfo(String mess) {
             fenetre.refreshInfo("Tours : " + Integer.toString(nbTours) + "Phase : " + mess + " Joueur : " + j_actif.getPseudo());
         }
-        //cette methode gere la premiére partie du Enchére pour les plantes
+        //cette methode gere la premiére partie du jeu: Enchére pour les plantes
         public void enchereParcelle() {
             int[] montantEnchere = new int[joueurs.size()];
             for (int i = 0; i < joueurs.size(); i++) {
@@ -182,14 +183,18 @@ public class Main {
             for (int i = 0; i < joueurs.size(); i++) {
                 j_actif = joueurs.get(i);
                 montantEnchere[i] = fenetre.offreJoueur(j_actif, montantEnchere);
-
             }
-                      
-	}
+            majConstructeurCanal(montantEnchere);
+            ArrayList<Joueur> toursJoueurs = triJoueurTour(montantEnchere);
+            joueurs = toursJoueurs;
+            for (int i = 0; i < joueurs.size(); i++) {
+                j_actif = toursJoueurs.get(i);
+                refreshInfo("EnchÃ¨re Parcelle");
+                Parcelle pChoisie = fenetre.choixParcelle(j_actif);
+                j_actif.setParcelleMain(pChoisie);
+                fenetre.RefreshMainJoueur(joueurs);
+            }  
         
 	}
-        
-        
-        
-
+       
 }
