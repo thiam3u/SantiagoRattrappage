@@ -130,6 +130,9 @@ public class PileParcelleGUI {
                 case test:
                     chemin = "/ressource/images/test.png";
                     break;
+                    
+                default:
+                    chemin = "/ressource/images/vide.png";
     		}
         
         
