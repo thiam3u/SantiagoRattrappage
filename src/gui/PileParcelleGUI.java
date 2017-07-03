@@ -91,6 +91,13 @@ public class PileParcelleGUI {
     				}
     				break;
     				
+                case piment:
+                    if (pileParcelles.get(compt).recupNbouvrierDessus() == 1) {
+                        chemin = "/ressource/images/piment1.png";
+                    } else {
+                        chemin = "/ressource/images/piment2.png";
+                    }
+                    break;
     		}
         
         
