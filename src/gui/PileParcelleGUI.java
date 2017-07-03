@@ -122,6 +122,10 @@ public class PileParcelleGUI {
                         chemin = "/ressource/images/haricot2.png";
                     }
                     break;
+                    
+                case vide:
+                    chemin = "/ressource/images/vide.png";
+                    break;
     		}
         
         
