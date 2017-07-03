@@ -98,6 +98,14 @@ public class PileParcelleGUI {
                         chemin = "/ressource/images/piment2.png";
                     }
                     break;
+                    
+                case banane:
+                    if (pileParcelles.get(compt).recupNbouvrierDessus() == 1) {
+                        chemin = "/ressource/images/banane1.png";
+                    } else {
+                        chemin = "/ressource/images/banane2.png";
+                    }
+                    break;
     		}
         
         
