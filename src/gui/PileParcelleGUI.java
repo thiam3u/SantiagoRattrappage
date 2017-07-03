@@ -134,6 +134,10 @@ public class PileParcelleGUI {
                 default:
                     chemin = "/ressource/images/vide.png";
     		}
+            url = this.getClass().getResource(chemin);
+            ImageIcon icon = new ImageIcon(url);
+            thumb.setIcon(icon);
+    	}
         
         
        
