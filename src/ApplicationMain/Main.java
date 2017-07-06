@@ -193,8 +193,38 @@ public class Main {
                 Parcelle pChoisie = fenetre.choixParcelle(j_actif);
                 j_actif.setParcelleMain(pChoisie);
                 fenetre.RefreshMainJoueur(joueurs);
-            }  
-        
+            }    
 	}
-       
+        public void enchereParcelleClient() {
+            Parcelle pChoisie = null;
+            this.retournerPlantation();
+            int[] montantEnchere = cli.getMontantEnchere();
+            int[] montant = {-1};
+            j_actif = joueursCli;
+            montant[0] = fenetre.offreJoueur(j_actif, montantEnchere);
+            cli.sendEnchere(montant[0]);
+            //reucpere le tri des joueurs
+            joueurs = cli.getJoueurs();
+            for (int i = 0; i < joueurs.size(); i++) {
+                j_actif = joueurs.get(i);
+                //si c'est Ã  notre tour de jouer
+                if (joueurs.get(i).getPseudo().equals(joueursCli.getPseudo())) {
+                    //authorization du serveur
+                    System.out.println("A moi !");
+                    cli.getParcelleMain();
+                    pChoisie = fenetre.choixParcelle(j_actif);
+                    j_actif.setParcelleMain(pChoisie);
+                    //envoie rÃ©sultat
+                    cli.sendParcelle(pChoisie);
+                }
+                //si quelqu'un d'autre Ã  jouer récupére son choix
+                else {
+                    System.out.println(" A lui !" + j_actif.getPseudo());
+                    pChoisie = cli.getParcellePrise();
+                    fenetre.retirerParcelle(pChoisie);
+                    joueurs.set(i, cli.getJoueur());
+                }
+            }
+
+        }   
 }
