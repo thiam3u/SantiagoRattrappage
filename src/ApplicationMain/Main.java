@@ -226,5 +226,17 @@ public class Main {
                 }
             }
 
-        }   
+        }
+        //gére la deuxieme phase du jeu le changement du constructeur
+        public void majConstructeurCanal(int[] montantEnchere) {
+            int min = 10000;
+            int pos = -1;
+            for (int i = 0; i < joueurs.size(); i++) {
+                if (montantEnchere[i] < min) {
+                    min = montantEnchere[i];
+                    pos = i;
+                }
+            }
+            setConstructeurCanal(joueurs.get(pos));
+        }
 }
