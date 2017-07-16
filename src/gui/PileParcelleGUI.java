@@ -142,6 +142,12 @@ public class PileParcelleGUI {
         //retourneretourner la parcelle au sommet de chacunes des 4 piles
         public void retournerLesPilesParcelles() {
         	int compteur = 0;
+            //pour chacune des 4 piles , retourner la parcelle au sommet de la pile
+            for (JLabel jLabel : pileParcellesGUI) {
+                JLabel thumb = jLabel;
+                retournerParcelles(thumb, compteur);
+                compteur++;
+            }
         }
         
         
