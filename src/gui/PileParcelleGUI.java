@@ -155,6 +155,8 @@ public class PileParcelleGUI {
             return panel;
         }
         
+        public Parcelle choixParcelle(Joueur j_actif) {
+        
         
        
         
