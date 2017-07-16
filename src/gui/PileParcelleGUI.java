@@ -138,6 +138,9 @@ public class PileParcelleGUI {
             ImageIcon icon = new ImageIcon(url);
             thumb.setIcon(icon);
     	}
+
+        //retourneretourner la parcelle au sommet de chacunes des 4 piles
+        public void retournerLesPilesParcelles() {
         
         
        
