@@ -156,6 +156,11 @@ public class PileParcelleGUI {
         }
         
         public Parcelle choixParcelle(Joueur j_actif) {
+            setEnchereEnCours(true);
+            parcelleChoisie = null;
+            Thread t = new Thread();
+            threadAttenteChoixPile = t;
+        }
         
         
        
