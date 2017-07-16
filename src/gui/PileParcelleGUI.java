@@ -141,6 +141,8 @@ public class PileParcelleGUI {
 
         //retourneretourner la parcelle au sommet de chacunes des 4 piles
         public void retournerLesPilesParcelles() {
+        	int compteur = 0;
+        }
         
         
        
