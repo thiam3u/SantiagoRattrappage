@@ -150,6 +150,11 @@ public class PileParcelleGUI {
             }
         }
         
+        public JPanel affichagePileParcelle() {
+            initialisation();
+            return panel;
+        }
+        
         
        
         
