@@ -160,6 +160,7 @@ public class PileParcelleGUI {
             parcelleChoisie = null;
             Thread t = new Thread();
             threadAttenteChoixPile = t;
+            threadAttenteChoixPile.start();
         }
         
         
