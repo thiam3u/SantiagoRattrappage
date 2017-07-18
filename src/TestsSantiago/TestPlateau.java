@@ -3,6 +3,8 @@ package TestsSantiago;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.ArrayList;
+
 import org.junit.Test;
 
 import plateau.Canal;
@@ -50,4 +52,17 @@ public class TestPlateau {
 	        assertFalse(p.trouveAdjacentHori(canal, elem5));
 
 	    }
+	   @Test
+	   // permet de tester la phase5 : permet de vérifier que les plantes Adjacent à un canal est bien irrigué 
+	    public void testIrrigation(){
+	        Plateau p = new Plateau();
+	        Canal canal = new Canal(false,2,4,4,4);
+	        p.irrigation(canal);
+	        ArrayList<Parcelle> listeP;
+	        listeP = p.listeParcellesAdjacentes(canal);
+	        for (Parcelle parcelle : listeP) {
+	            assertTrue(parcelle.isIrrigue());
+	        }
+	    }
+	   
 }
