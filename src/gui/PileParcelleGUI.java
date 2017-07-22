@@ -172,8 +172,11 @@ public class PileParcelleGUI {
               //quand le thread est fini, on return parcelleChoisie
                 setEnchereEnCours(false);
                 return parcelleChoisie;
-            }
-                
+            }      
+        }
+        
+        private void setEnchereEnCours(boolean b) {
+            encherencours = b;
         }
         
         
