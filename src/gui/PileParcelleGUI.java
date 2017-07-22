@@ -169,6 +169,10 @@ public class PileParcelleGUI {
                         e.printStackTrace();
                     }
                 }
+              //quand le thread est fini, on return parcelleChoisie
+                setEnchereEnCours(false);
+                return parcelleChoisie;
+            }
                 
         }
         
