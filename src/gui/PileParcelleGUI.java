@@ -161,6 +161,15 @@ public class PileParcelleGUI {
             Thread t = new Thread();
             threadAttenteChoixPile = t;
             threadAttenteChoixPile.start();
+            synchronized (threadAttenteChoixPile) {
+                while (parcelleChoisie == null) {
+                    try {
+                        threadAttenteChoixPile.wait();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                
         }
         
         
