@@ -179,10 +179,12 @@ public class PileParcelleGUI {
             encherencours = b;
         }
         
-        
-       
-        
-        
-        
-        
+        public void retirerParcelle(Parcelle pChoisie) {
+            for(int i =0; i<4; i++){
+                if(pileParcelles.get(i).getParcelle().equals(pChoisie)){
+                    pileParcelles.get(i).popParcelle();
+                    pileParcellesGUI.get(i).setIcon(iconvide);
+                }
+            }
+        }        
 }
