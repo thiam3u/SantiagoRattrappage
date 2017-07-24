@@ -227,7 +227,7 @@ public class Main {
             }
 
         }
-        //gére la deuxieme phase du jeu le changement du constructeur
+        //gére la deuxieme phase du jeu le changement du constructeur de canal
         public void majConstructeurCanal(int[] montantEnchere) {
             int min = 10000;
             int pos = -1;
@@ -238,6 +238,16 @@ public class Main {
                 }
             }
             setConstructeurCanal(joueurs.get(pos));
+        }
+        
+        //gére la troisieme phase du jeu le depot de la parcelle en main des joueurs
+        public void depotParcelle() {
+            for (Joueur joueur : joueurs) {
+                j_actif = joueur;
+                refreshInfo("Dépot parcelle");
+                fenetre.depotParcelle(j_actif);
+                fenetre.RefreshMainJoueur(joueurs);
+            }
         }
         
         
