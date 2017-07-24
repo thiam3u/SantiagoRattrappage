@@ -7,6 +7,7 @@ import gameMaster.MaitreDuJeu;
 import gui.FenetreGUI;
 import gui.PileParcelleGUI;
 import joueur.Joueur;
+import joueur.Proposition;
 import plateau.Parcelle;
 import plateau.PileParcelle;
 import plateau.Plateau;
@@ -249,6 +250,44 @@ public class Main {
                 fenetre.RefreshMainJoueur(joueurs);
             }
         }
+        
+        //gére la  quatrieme phase du jeu soudoiement aupres du constructeur et construction du canal par ce dernier
+        private void soudoiementConstructeur() {
+            ArrayList<Proposition> listProposition = new ArrayList<Proposition>();
+
+            //On construit la liste des differentes proposition
+            for (int i = 0; i < joueurs.size(); i++) {
+
+                j_actif = joueurs.get(i);
+                refreshInfo("Enchere canal");
+                //seul les non constructeurs emettent des propositions
+                if (j_actif != constructeurCanal) {
+                    fenetre.propositionCanalJoueur(j_actif, listProposition);
+                }
+            }
+
+            //on affiche la liste au constructeur (qui contient aussi sa proposition) il choisit une proposition pour construire
+            constructionCanal(listProposition);
+        }
+        //gére la  quatrieme phase du jeu soudoiement aupres du constructeur et construction du canal par ce dernier
+        private void soudoiementConstructeur() {
+            ArrayList<Proposition> listProposition = new ArrayList<Proposition>();
+
+            //On construit la liste des differentes proposition
+            for (int i = 0; i < joueurs.size(); i++) {
+
+                j_actif = joueurs.get(i);
+                refreshInfo("Enchere canal");
+                //seul les non constructeurs emettent des propositions
+                if (j_actif != constructeurCanal) {
+                    fenetre.propositionCanalJoueur(j_actif, listProposition);
+                }
+            }
+
+            //on affiche la liste au constructeur (qui contient aussi sa proposition) il choisit une proposition pour construire
+            constructionCanal(listProposition);
+        }
+
         
         
 }
