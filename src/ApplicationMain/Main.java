@@ -288,6 +288,19 @@ public class Main {
             constructionCanal(listProposition);
         }
 
-        
-        
+        //gerere la  cinquieme phase du jeu secheresse 
+        private void irriguationComplementaire() {
+            refreshInfo("Irriguation");
+            boolean adeposer = false;
+            for (int i = 0; i < joueurs.size(); i++) {
+                j_actif = joueurs.get(i);
+                refreshInfo("Irriguation");
+                if (j_actif.isCanalComplementaire()) { //si la personne actif a un canal complémentaire
+                    if (!adeposer) { //si personne n'a déja posé son canal durant ce tour de jeu
+                        adeposer = fenetre.depotCanalComplementaire(j_actif);
+                    }
+                }
+            }
+        }
+           
 }
