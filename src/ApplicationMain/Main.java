@@ -288,7 +288,7 @@ public class Main {
             constructionCanal(listProposition);
         }
 
-        //gerere la  cinquieme phase du jeu secheresse 
+        //gere la  cinquieme phase du jeu secheresse 
         private void irriguationComplementaire() {
             refreshInfo("Irriguation");
             boolean adeposer = false;
@@ -301,6 +301,13 @@ public class Main {
                     }
                 }
             }
+        }
+        //gére la  sixieme phase du jeu
+        private void secheresse() {
+            refreshInfo("Secheresse");
+            System.out.println("MJ.secheresse");
+            fenetre.secheresse();
+
         }
            
 }
