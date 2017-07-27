@@ -318,4 +318,11 @@ public class Main {
             }
             fenetre.RefreshMainJoueur(joueurs);
         }
+        
+        // les fonction du jeu 
+        
+        public void resultatFinal(ArrayList<Joueur> listeJoueurs) {
+            fenetre.calculResultatFinal(listeJoueurs);
+      
+        }
 }
