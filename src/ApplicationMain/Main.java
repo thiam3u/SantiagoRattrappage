@@ -309,5 +309,13 @@ public class Main {
             fenetre.secheresse();
 
         }
-           
+          
+
+        //gére la  septieme phase du jeu le paiement de tous les joueurs en fin de tours
+        private void paiementJoueur() {
+            for (Joueur joueur : joueurs) {
+                joueur.setArgent(joueur.getArgent() + montantRevenu);
+            }
+            fenetre.RefreshMainJoueur(joueurs);
+        }
 }
