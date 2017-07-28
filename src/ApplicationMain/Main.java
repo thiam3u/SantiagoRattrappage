@@ -2,6 +2,8 @@ package ApplicationMain;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 
 import gameMaster.MaitreDuJeu;
 import gui.FenetreGUI;
@@ -328,5 +330,33 @@ public class Main {
         
         public void afficherJeu() {
             this.fenetre.creationPlateau(pileParcelles, joueurs);
+        }
+      //Créer les différentes pile de parcelles pour la partie
+        private void initialisationPileParcelles() {
+
+            //on init les piles parcelles
+            for (int i = 0; i < joueurs.size(); i++) {
+                pileParcelles.add(new PileParcelle());
+            }
+
+            int nbPile = pileParcelles.size();
+            long seed = System.nanoTime(); //Pour notre randoum
+            ArrayList<Parcelle> parcelles = new ArrayList<Parcelle>(45);
+
+            //On créer les 45 tuiles
+            creationParcelles(parcelles);
+
+            Collections.shuffle(parcelles, new Random(seed));
+
+            //Si on est à  4 joueurs on retire une parcelle du jeu
+            if (nbPile == 4) {
+                parcelles.remove(0);
+            }
+            while (!parcelles.isEmpty()) {
+                for (int i = 0; i < nbPile; i++) {
+                    pileParcelles.get(i).AjoutParcelle(parcelles.get(0));
+                    parcelles.remove(0);
+                }
+            }
         }
 }
