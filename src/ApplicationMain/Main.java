@@ -325,4 +325,8 @@ public class Main {
             fenetre.calculResultatFinal(listeJoueurs);
       
         }
+        
+        public void afficherJeu() {
+            this.fenetre.creationPlateau(pileParcelles, joueurs);
+        }
 }
