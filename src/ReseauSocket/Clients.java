@@ -260,7 +260,53 @@ public class Clients {
 	                return true;
 	            }
 	        }
- 	
+	        public Parcelle getParcellePrise(){
+	            att = new Thread();
+	            att.start();
+	            synchronized (att) {
+	                while (pChoisie == null) {
+	                    System.out.println("att ParcellePrise");
+	                    try {
+	                        att.wait();
+	                    } catch (InterruptedException e) {
+	                        e.printStackTrace();
+	                    }
+	                }
+	                Parcelle res = new Parcelle(pChoisie);
+	                pChoisie = null;
+	                return res;
+	            }
+	        }
+	        public Joueur getJoueur() {
+	            att = new Thread();
+	            att.start();
+	            synchronized (att) {
+	                while (j_actif == null) {
+	                    System.out.println("att");
+	                    try {
+	                        att.wait();
+	                    } catch (InterruptedException e) {
+	                        e.printStackTrace();
+	                    }
+	                }
+	                Joueur res = new Joueur(j_actif);
+	                j_actif =null;
+	                return res;
+	            }
+	        }
+	        public void sendParcelle(Parcelle pChoisie) {
+	            try {
+	                //code message
+	                os.writeInt(4);
+	                os.flush();
+	                //montantEnchere
+	                os.reset();
+	                os.writeObject(pChoisie);
+	                os.flush();
+	            } catch (IOException e) {
+	                e.printStackTrace();
+	            }
+	        }
 	    }
         
 	        
