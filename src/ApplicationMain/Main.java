@@ -388,5 +388,11 @@ public class Main {
             }
             return res;
         }
+        
+        private void constructionCanal(ArrayList<Proposition> listProposition) {
+            System.out.println("Construction canal");
+            fenetre.choixCanalConstructeur(constructeurCanal, listProposition);
+        }
+
        
 }
