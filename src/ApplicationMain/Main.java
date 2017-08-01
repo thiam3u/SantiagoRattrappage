@@ -359,4 +359,34 @@ public class Main {
                 }
             }
         }
+      //Retourne une liste de joueurs trié pour la phase de tour 1
+        private ArrayList<Joueur> triJoueurTour(int[] montantEnchere) {
+            ArrayList<Joueur> res = new ArrayList<Joueur>(joueurs.size());
+            int max = -1;
+            int maxExclu = 10000;
+            int pos = -1;
+            //tries les joueurs qui ont misés
+            for (int j = 0; j < joueurs.size(); j++) {
+                for (int i = 0; i < joueurs.size(); i++) {
+                    if (montantEnchere[i] != 0 && max < montantEnchere[i] && montantEnchere[i] < maxExclu) {
+                        max = montantEnchere[i];
+                        pos = i;
+                    }
+                }
+                maxExclu = max;
+                if (pos != -1 && montantEnchere[pos] != 0) {
+                    res.add(joueurs.get(pos));
+                }
+                max = -1;
+                pos = -1;
+            }
+            //tri les joueurs qui ont passé
+            for (int i = joueurs.size() - 1; i > -1; i--) {
+                if (montantEnchere[i] == 0) {
+                    res.add(joueurs.get(i));
+                }
+            }
+            return res;
+        }
+       
 }
