@@ -393,6 +393,10 @@ public class Main {
             System.out.println("Construction canal");
             fenetre.choixCanalConstructeur(constructeurCanal, listProposition);
         }
+        
+        private void retournerPlantation() {
+            fenetre.retournerLesPilesParcelles();
+        }
 
        
 }
