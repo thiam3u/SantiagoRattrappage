@@ -397,6 +397,19 @@ public class Main {
         private void retournerPlantation() {
             fenetre.retournerLesPilesParcelles();
         }
-
+        
+        private void creationParcelles(ArrayList<Parcelle> parcelles) {
+            //les 6 patates avec 1 travailleur
+            parcelles.add(new Parcelle(1, false, false, Parcelle.typeChamps.patate));
+            parcelles.add(new Parcelle(1, false, false, Parcelle.typeChamps.patate));
+            parcelles.add(new Parcelle(1, false, false, Parcelle.typeChamps.patate));
+            parcelles.add(new Parcelle(1, false, false, Parcelle.typeChamps.patate));
+            parcelles.add(new Parcelle(1, false, false, Parcelle.typeChamps.patate));
+            parcelles.add(new Parcelle(1, false, false, Parcelle.typeChamps.patate));
+            //les 3 patates avec 2 travailleurs
+            parcelles.add(new Parcelle(2, false, false, Parcelle.typeChamps.patate));
+            parcelles.add(new Parcelle(2, false, false, Parcelle.typeChamps.patate));
+            parcelles.add(new Parcelle(2, false, false, Parcelle.typeChamps.patate));
+        }
        
 }
