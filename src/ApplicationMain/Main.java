@@ -410,8 +410,7 @@ public class Main {
             parcelles.add(new Parcelle(2, false, false, Parcelle.typeChamps.patate));
             parcelles.add(new Parcelle(2, false, false, Parcelle.typeChamps.patate));
             parcelles.add(new Parcelle(2, false, false, Parcelle.typeChamps.patate));
-            
-            
+
             //les 6 piments avec 1 travailleur
             parcelles.add(new Parcelle(1, false, false, Parcelle.typeChamps.piment));
             parcelles.add(new Parcelle(1, false, false, Parcelle.typeChamps.piment));
