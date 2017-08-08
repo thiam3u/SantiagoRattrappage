@@ -422,6 +422,18 @@ public class Main {
             parcelles.add(new Parcelle(2, false, false, Parcelle.typeChamps.piment));
             parcelles.add(new Parcelle(2, false, false, Parcelle.typeChamps.piment));
             parcelles.add(new Parcelle(2, false, false, Parcelle.typeChamps.piment));
+            
+            //les 6 bananes avec 1 travailleur
+            parcelles.add(new Parcelle(1, false, false, Parcelle.typeChamps.banane));
+            parcelles.add(new Parcelle(1, false, false, Parcelle.typeChamps.banane));
+            parcelles.add(new Parcelle(1, false, false, Parcelle.typeChamps.banane));
+            parcelles.add(new Parcelle(1, false, false, Parcelle.typeChamps.banane));
+            parcelles.add(new Parcelle(1, false, false, Parcelle.typeChamps.banane));
+            parcelles.add(new Parcelle(1, false, false, Parcelle.typeChamps.banane));
+            //les 3 bananes avec 2 travailleurs
+            parcelles.add(new Parcelle(2, false, false, Parcelle.typeChamps.banane));
+            parcelles.add(new Parcelle(2, false, false, Parcelle.typeChamps.banane));
+            parcelles.add(new Parcelle(2, false, false, Parcelle.typeChamps.banane));
 
         }
        
