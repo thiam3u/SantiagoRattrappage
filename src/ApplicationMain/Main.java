@@ -434,7 +434,18 @@ public class Main {
             parcelles.add(new Parcelle(2, false, false, Parcelle.typeChamps.banane));
             parcelles.add(new Parcelle(2, false, false, Parcelle.typeChamps.banane));
             parcelles.add(new Parcelle(2, false, false, Parcelle.typeChamps.banane));
+            
+            //les 6 bambous avec 1 travailleur
+            parcelles.add(new Parcelle(1, false, false, Parcelle.typeChamps.bambou));
+            parcelles.add(new Parcelle(1, false, false, Parcelle.typeChamps.bambou));
+            parcelles.add(new Parcelle(1, false, false, Parcelle.typeChamps.bambou));
+            parcelles.add(new Parcelle(1, false, false, Parcelle.typeChamps.bambou));
+            parcelles.add(new Parcelle(1, false, false, Parcelle.typeChamps.bambou));
+            parcelles.add(new Parcelle(1, false, false, Parcelle.typeChamps.bambou));
+            //les 3 bambous avec 2 travailleurs
+            parcelles.add(new Parcelle(2, false, false, Parcelle.typeChamps.bambou));
+            parcelles.add(new Parcelle(2, false, false, Parcelle.typeChamps.bambou));
+            parcelles.add(new Parcelle(2, false, false, Parcelle.typeChamps.bambou));
 
-        }
-       
+        }     
 }
