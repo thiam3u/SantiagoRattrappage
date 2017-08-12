@@ -446,6 +446,20 @@ public class Main {
             parcelles.add(new Parcelle(2, false, false, Parcelle.typeChamps.bambou));
             parcelles.add(new Parcelle(2, false, false, Parcelle.typeChamps.bambou));
             parcelles.add(new Parcelle(2, false, false, Parcelle.typeChamps.bambou));
+           
+            //les 6 haricots avec 1 travailleur
+            parcelles.add(new Parcelle(1, false, false, Parcelle.typeChamps.haricot));
+            parcelles.add(new Parcelle(1, false, false, Parcelle.typeChamps.haricot));
+            parcelles.add(new Parcelle(1, false, false, Parcelle.typeChamps.haricot));
+            parcelles.add(new Parcelle(1, false, false, Parcelle.typeChamps.haricot));
+            parcelles.add(new Parcelle(1, false, false, Parcelle.typeChamps.haricot));
+            parcelles.add(new Parcelle(1, false, false, Parcelle.typeChamps.haricot));
+            //les 3 haricots avec 2 travailleurs
+            parcelles.add(new Parcelle(2, false, false, Parcelle.typeChamps.haricot));
+            parcelles.add(new Parcelle(2, false, false, Parcelle.typeChamps.haricot));
+            parcelles.add(new Parcelle(2, false, false, Parcelle.typeChamps.haricot));
 
-        }     
+        }  
+        
+        
 }
