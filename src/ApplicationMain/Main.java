@@ -460,6 +460,9 @@ public class Main {
             parcelles.add(new Parcelle(2, false, false, Parcelle.typeChamps.haricot));
 
         }  
+        private void afficherLauncher() {
+            fenetre.creationLauncher();
+        }
         
         
 }
