@@ -463,6 +463,12 @@ public class Main {
         private void afficherLauncher() {
             fenetre.creationLauncher();
         }
-        
-        
+        private void EnvoieJoueur() {
+            for (int i = 0; i < 3; i++) {
+                serv.sendJoueur(joueurs, i);
+                while (!serv.reponseClient(i)) {
+                    fenetre.getLauncher().setInfo("En attente de rep de " + i);
+                }
+            }
+        }
 }
