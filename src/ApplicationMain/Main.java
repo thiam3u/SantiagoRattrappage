@@ -471,4 +471,26 @@ public class Main {
                 }
             }
         }
+        private void jouerPartieServeur(ArrayList<Joueur> listeJoueurs) {
+            setJoueur(listeJoueurs);
+            //Envoie les pseudos des autres joueurs
+            EnvoieJoueur();
+            //Envoie la liste de pile parcelles aux autres joueurs
+            for (int i = 0; i < 3; i++) {
+                serv.sendPileParcelle(pileParcelles, i);
+                while (!serv.reponseClient(i)) {
+                    fenetre.getLauncher().setInfo("En attente de rep de " + i);
+                }
+            }
+            afficherJeu();
+            setJ_actif(listeJoueurs.get(0));
+
+            do {
+                nbTours++;
+                System.out.println("Tour " + nbTours + " commence");
+                System.out.println("Phase Enchere Parcelle");
+                enchereParcelleServeur();
+              
+            } while (nbTours != 6);
+        }
 }
