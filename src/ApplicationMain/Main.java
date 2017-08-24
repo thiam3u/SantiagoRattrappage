@@ -493,4 +493,13 @@ public class Main {
               
             } while (nbTours != 6);
         }
+        
+        private void jouerPartieClient(ArrayList<Joueur> listeJoueurs) {
+            this.joueurs = listeJoueurs;
+            pileParcelles = cli.getPileParcelles();
+            System.out.println("Creation Partie");
+            afficherJeu();
+            setJ_actif(listeJoueurs.get(0));
+            enchereParcelleClient();
+        }
 }
