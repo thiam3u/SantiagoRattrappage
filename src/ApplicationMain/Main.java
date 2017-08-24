@@ -502,4 +502,34 @@ public class Main {
             setJ_actif(listeJoueurs.get(0));
             enchereParcelleClient();
         }
+        
+        private void jouerPartieLocal(ArrayList<Joueur> listeJoueurs) {
+            setJoueur(listeJoueurs);
+            afficherJeu();
+            //mj.afficherPileParcelle();
+            setJ_actif(listeJoueurs.get(0));
+            do {
+                nbTours++;
+
+                //Phase Enchere Parcelle
+                enchereParcelle();
+                //Phase Depot Parcelle
+                depotParcelle();
+                //Phase Soudoiement Constructeur + construction canal
+                soudoiementConstructeur();
+                //Phase Irrigation complémentaire
+                irriguationComplementaire();
+                if (nbTours != 6) {//ces 2 phases n<ont pas lieu au dernier tour
+                    //Phase de secheresse
+                    secheresse();
+                    //Phase de paiement
+                    paiementJoueur();
+                }
+            } while (nbTours != 6);
+
+            resultatFinal(listeJoueurs);
+        }
+        
+        
+        
 }
